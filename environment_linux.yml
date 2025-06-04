@@ -1,0 +1,25 @@
+name: wcs-units
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - rapidsai
+dependencies:
+  - ipywidgets
+  - umap-learn
+  - opencv
+  - scikit-learn
+  - cuml
+  - sunpy
+  - pandas
+  - hdbscan
+  - wandb
+  - matplotlib
+  - seaborn
+  - pip
+  - pip:
+    - torch 
+    - torchvision
+    - torchaudio
+    - lightning
+    - --index-url https://download.pytorch.org/whl/cu128
