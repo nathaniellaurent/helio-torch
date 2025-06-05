@@ -16,10 +16,11 @@ dependencies:
   - wandb
   - matplotlib
   - seaborn
+  - reproject
   - pip
   - pip:
     - torch 
     - torchvision
     - torchaudio
-    - lightning
+    - pytorch-lightning
     - --index-url https://download.pytorch.org/whl/cu128
