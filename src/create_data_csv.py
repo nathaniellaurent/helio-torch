@@ -79,8 +79,8 @@ for aia_date, aia_path in aia_list:
             print(f"Error reading DATE-OBS from {aia_path}: {e}")
             date_obs = ''
         # Store relative paths from helio-torch folder
-        rel_hmi_path = os.path.relpath(closest_hmi[1], start=os.path.dirname(os.path.dirname(__file__)))
-        rel_aia_path = os.path.relpath(aia_path, start=os.path.dirname(os.path.dirname(__file__)))
+        rel_hmi_path = os.path.relpath(closest_hmi[1], start=solar_data_dir)
+        rel_aia_path = os.path.relpath(aia_path, start=solar_data_dir)
         rows.append([aia_date, date_obs, rel_hmi_path, rel_aia_path])
 
 # Write to CSV
