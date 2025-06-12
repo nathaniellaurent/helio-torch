@@ -3,6 +3,8 @@
 import os
 from sunpy.map import Map
 import matplotlib.pyplot as plt
+from astropy.io import fits
+
 from sunpy.image.resample import resample
 
 
@@ -12,6 +14,17 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 # Build paths relative to the script location
 aia_image_path = os.path.join(script_dir, '../solar_data/aia_images/aia.lev1_euv_12s.2023-12-31T235930Z.193.image_lev1.fits')
 hmi_image_path = os.path.join(script_dir, '../solar_data/hmi_images/hmi.m_720s.20240101_000000_TAI.3.magnetogram.fits')
+
+
+# Print FITS header info before loading maps
+print('AIA header:')
+with fits.open(aia_image_path) as hdul:
+    print(repr(hdul[0].header))
+    print(repr(hdul[1].header))
+print('\nHMI header:')
+with fits.open(hmi_image_path) as hdul:
+    print(repr(hdul[0].header))
+    print(repr(hdul[1].header))
 
 # Load maps
 aia_map = Map(aia_image_path)
